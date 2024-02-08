@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main>
+        <div class="wrap">
+            <section class="heading">
+                <p class="title"></p>
+                <p class="subtitle"></p>
+            </section>
+
+            <section class="task-manger">
+                <div class="search-box">
+                    <form class="search">
+                        <input type="text" name="task" placeholder="search task" autocomplete="off">
+                        <i class="bi bi-box-arrow-in-left reset"></i>
+                    </form>
+                </div>
+                <div class="task-box">
+                    <ul class="tasks">
+                        <li>
+                            <span class="task1"></span>
+                            <i class="bi bi-trash delete"></i> 
+                        </li>
+                        <li>
+                            <span class="task2"></span>
+                            <i class="bi bi-trash delete"></i> 
+                        </li>
+                        <li>
+                            <span class="task3"></span>
+                            <i class="bi bi-trash delete"></i> 
+                        </li>
+                    </ul> 
+                    <form class="add">
+                        <input type="text" name="task" placeholder="addtask" autocomplete="off">
+                        <input type="submit" value="Add">
+                    </form>
+                </div>
+                <div class="message">
+                    <span>You have 3 Pending tasks.</span>
+                    <button class="clear">Clear All</button>
+
+
+                </div>
+            </section>
+
+        </div>
+
+
+    </main>
+    <script src="./index.js"></script>
+</body>
+</html>
