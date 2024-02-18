@@ -128,3 +128,7 @@
     font-size: 16px;
     border-radius: 3px;
 }
+
+.hide{
+    display: none !important;
+}

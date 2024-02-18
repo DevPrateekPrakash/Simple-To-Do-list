@@ -23,7 +23,7 @@ addForm.addEventListener("submit", event=>{
         addForm.reset();
         updatetask()
     }
-    
+     
 })
 
 tasks.addEventListener("click", event=>{
@@ -36,7 +36,7 @@ tasks.addEventListener("click", event=>{
 })
 
 clearAll.addEventListener("click", event=>{
-    const taskItems=tasks.querySelectorAll("li")
+    const taskItems=tasks.querySelectorAll("li").toLowerCase()
     taskItems.forEach(item =>{
         item.remove()
         updatetask()
@@ -44,5 +44,31 @@ clearAll.addEventListener("click", event=>{
 })
 
 searchForm.addEventListener("keyup", event=>{
-    const term=searchForm.task.value.trim()
+    const term=searchForm.task.value.trim().toLowerCase()
+    filterTask(term)
+
+    
 })
+
+searchForm.addEventListener("click", event =>{
+    if(event.target.classList.contains("reset")){
+        searchForm.reset()
+        const term=searchForm.task.value.trim().toLowerCase()
+        filterTask(term)
+    }
+})
+
+function filterTask(term){
+    const list=Array.from(tasks.children).filter(task =>{
+        return !task.textContent.toLowerCase().includes(term)
+    }).forEach(task =>{
+        task.classList.add("hide")
+    })
+    Array.from(tasks.children).filter(task =>{
+        return task
+    .textContent.toLowerCase().includes(term)}).forEach(task => {
+        task.classList.remove("hide")
+    })
+
+}
+
